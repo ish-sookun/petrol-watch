@@ -16,7 +16,7 @@ This application is built for demo purposes to teach university students about c
 
 | Layer        | Technology                                                  |
 |-------------|-------------------------------------------------------------|
-| Backend     | Python 3.13, Flask                                          |
+| Backend     | Python 3.14, Flask                                          |
 | Database    | PostgreSQL 16 with SQLAlchemy ORM                           |
 | Frontend    | HTML5, CSS3, JavaScript (ES6)                               |
 | Charts      | Chart.js with date-fns adapter                              |
