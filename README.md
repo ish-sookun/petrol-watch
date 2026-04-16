@@ -2,6 +2,8 @@
 
 A web application that tracks the evolution of Gasoline (Mogas) and Diesel (Gas Oil) retail prices in Mauritius. Price data is sourced from the [State Trading Corporation (STC)](https://www.stcmu.com/ppm/retail-prices).
 
+This application is built for demo purposes to teach university students about containerizing and deploying Python applications on the Google Cloud Platform. It aims to introduce students to Cloud Native Technologies such as Cloud Run and Google Kubernetes Engine (GKE).
+
 ## Features
 
 - **Price Dashboard** - Interactive line chart showing Gasoline and Diesel price history from 2004 to present
