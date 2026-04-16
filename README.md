@@ -112,7 +112,7 @@ The app is now running at **http://localhost:5000**
 |---------------|------------------------------|-----------------------------------------------|
 | `FLASK_ENV`   | Environment (development/production) | `development`                          |
 | `SECRET_KEY`  | Flask secret key             | `dev-secret-change-me`                        |
-| `DATABASE_URL`| PostgreSQL connection string | `postgresql://root:@127.0.0.1:5432/petrol_watch` |
+| `DATABASE_URL`| PostgreSQL connection string | `postgresql+psycopg://root:@127.0.0.1:5432/petrol_watch` |
 
 ### CLI Commands
 
@@ -167,7 +167,7 @@ gcloud run deploy petrol-watch \
   --region us-central1 \
   --allow-unauthenticated \
   --add-cloudsql-instances petrol-watch:us-central1:petrol-watch-db \
-  --set-env-vars "DATABASE_URL=postgresql://postgres:YOUR_SECURE_PASSWORD@/petrol_watch?host=/cloudsql/petrol-watch:us-central1:petrol-watch-db" \
+  --set-env-vars "DATABASE_URL=postgresql+psycopg://postgres:YOUR_SECURE_PASSWORD@/petrol_watch?host=/cloudsql/petrol-watch:us-central1:petrol-watch-db" \
   --set-env-vars "SECRET_KEY=$(python3 -c 'import secrets; print(secrets.token_hex(32))')" \
   --set-env-vars "FLASK_ENV=production"
 ```
@@ -180,7 +180,7 @@ gcloud run jobs create seed-db \
   --command "flask" \
   --args "seed" \
   --add-cloudsql-instances petrol-watch:us-central1:petrol-watch-db \
-  --set-env-vars "DATABASE_URL=postgresql://postgres:YOUR_SECURE_PASSWORD@/petrol_watch?host=/cloudsql/petrol-watch:us-central1:petrol-watch-db"
+  --set-env-vars "DATABASE_URL=postgresql+psycopg://postgres:YOUR_SECURE_PASSWORD@/petrol_watch?host=/cloudsql/petrol-watch:us-central1:petrol-watch-db"
 
 gcloud run jobs execute seed-db
 ```
@@ -193,7 +193,7 @@ gcloud run jobs create create-admin \
   --command "flask" \
   --args "create-admin,admin,YOUR_ADMIN_PASSWORD" \
   --add-cloudsql-instances petrol-watch:us-central1:petrol-watch-db \
-  --set-env-vars "DATABASE_URL=postgresql://postgres:YOUR_SECURE_PASSWORD@/petrol_watch?host=/cloudsql/petrol-watch:us-central1:petrol-watch-db"
+  --set-env-vars "DATABASE_URL=postgresql+psycopg://postgres:YOUR_SECURE_PASSWORD@/petrol_watch?host=/cloudsql/petrol-watch:us-central1:petrol-watch-db"
 
 gcloud run jobs execute create-admin
 ```
