@@ -1,24 +1,26 @@
 /* ===== CSS Custom Properties ===== */
 :root {
-    --color-primary: #1a5632;
-    --color-primary-light: #238c4e;
-    --color-mogas: #e3001b;
-    --color-gasoil: #00a651;
-    --color-bg: #f5f7fa;
+    --color-primary: #44A194;
+    --color-primary-light: #5ab5a8;
+    --color-secondary: #537D96;
+    --color-accent: #EC8F8D;
+    --color-mogas: #EC8F8D;
+    --color-gasoil: #44A194;
+    --color-bg: #F4F0E4;
     --color-white: #ffffff;
-    --color-text: #1e293b;
-    --color-text-light: #64748b;
-    --color-border: #e2e8f0;
-    --color-danger: #dc2626;
-    --color-danger-hover: #b91c1c;
-    --color-success-bg: #dcfce7;
-    --color-success-text: #166534;
-    --color-error-bg: #fee2e2;
-    --color-error-text: #991b1b;
-    --color-info-bg: #dbeafe;
-    --color-info-text: #1e40af;
-    --color-warning-bg: #fef9c3;
-    --color-warning-text: #854d0e;
+    --color-text: #2c3e50;
+    --color-text-light: #637381;
+    --color-border: #ddd8c8;
+    --color-danger: #d9534f;
+    --color-danger-hover: #c9302c;
+    --color-success-bg: #d5f0e3;
+    --color-success-text: #2d7a5a;
+    --color-error-bg: #fbe1e0;
+    --color-error-text: #a94442;
+    --color-info-bg: #dce8f0;
+    --color-info-text: #3a6a8a;
+    --color-warning-bg: #f7f0d0;
+    --color-warning-text: #7a6520;
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
@@ -348,7 +350,7 @@ a:hover {
 .form-group input:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(26, 86, 50, 0.15);
+    box-shadow: 0 0 0 3px rgba(68, 161, 148, 0.2);
 }
 
 .form-actions {
@@ -388,12 +390,12 @@ a:hover {
 }
 
 .btn-secondary {
-    background: #475569;
+    background: var(--color-secondary);
     color: var(--color-white);
 }
 
 .btn-secondary:hover {
-    background: #334155;
+    background: #476b82;
     color: var(--color-white);
 }
 
@@ -495,7 +497,7 @@ a:hover {
 }
 
 .data-table tbody tr:hover {
-    background: #f8fafc;
+    background: #efe9da;
 }
 
 .data-table tbody tr:last-child td {

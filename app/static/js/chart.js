@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                     {
                         label: 'Mogas (Gasoline) Rs/L',
                         data: mogasData,
-                        borderColor: '#e3001b',
-                        backgroundColor: 'rgba(227, 0, 27, 0.08)',
+                        borderColor: '#EC8F8D',
+                        backgroundColor: 'rgba(236, 143, 141, 0.12)',
                         fill: true,
                         tension: 0.3,
                         pointRadius: 2,
@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                     {
                         label: 'Gas Oil (Diesel) Rs/L',
                         data: gasoilData,
-                        borderColor: '#00a651',
-                        backgroundColor: 'rgba(0, 166, 81, 0.08)',
+                        borderColor: '#44A194',
+                        backgroundColor: 'rgba(68, 161, 148, 0.12)',
                         fill: true,
                         tension: 0.3,
                         pointRadius: 2,
