@@ -19,11 +19,12 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="{{ url_for('public.index') }}">Home</a></li>
                 {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('public.index') }}">Home</a></li>
+                <li><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
                 <li><a href="{{ url_for('admin.logout') }}">Log out</a></li>
                 {% else %}
-                <li><a href="{{ url_for('admin.login') }}">Login</a></li>
+                <li><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
                 {% endif %}
             </ul>
         </div>
