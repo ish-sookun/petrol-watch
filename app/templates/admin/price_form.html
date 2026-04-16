@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ 'Edit' if editing else 'Add' }} Price{% endblock %}
+
+{% block content %}
+<section class="auth-section">
+    <div class="auth-card">
+        <h1>{{ 'Edit' if editing else 'Add New' }} Price Entry</h1>
+        <form method="POST" action="{{ url_for('admin.edit_price', id=price.id) if editing else url_for('admin.add_price') }}">
+            <div class="form-group">
+                <label for="date">Effective Date</label>
+                <input type="date" id="date" name="date" required
+                    value="{{ price.date.isoformat() if editing and price else '' }}">
+            </div>
+            <div class="form-group">
+                <label for="mogas">Mogas / Gasoline (Rs/Litre)</label>
+                <input type="number" id="mogas" name="mogas" step="0.01" min="0.01" required
+                    value="{{ '%.2f'|format(price.mogas) if editing and price else '' }}">
+            </div>
+            <div class="form-group">
+                <label for="gasoil">Gas Oil / Diesel (Rs/Litre)</label>
+                <input type="number" id="gasoil" name="gasoil" step="0.01" min="0.01" required
+                    value="{{ '%.2f'|format(price.gasoil) if editing and price else '' }}">
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">{{ 'Update' if editing else 'Add' }} Price</button>
+                <a href="{{ url_for('admin.dashboard') }}" class="btn btn-outline">Cancel</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

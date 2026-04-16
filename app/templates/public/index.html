@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Fuel Prices{% endblock %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0"></script>
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Mauritius Fuel Prices</h1>
+    <p class="hero-subtitle">Track the evolution of Gasoline and Diesel retail prices</p>
+
+    {% if latest %}
+    <div class="price-cards">
+        <div class="price-card price-card--mogas">
+            <div class="price-card-label">Mogas (Gasoline)</div>
+            <div class="price-card-value">Rs {{ "%.2f"|format(latest.mogas) }}</div>
+            <div class="price-card-unit">per litre</div>
+            <div class="price-card-date">Effective from {{ latest.date.strftime('%d %B %Y') }}</div>
+        </div>
+        <div class="price-card price-card--gasoil">
+            <div class="price-card-label">Gas Oil (Diesel)</div>
+            <div class="price-card-value">Rs {{ "%.2f"|format(latest.gasoil) }}</div>
+            <div class="price-card-unit">per litre</div>
+            <div class="price-card-date">Effective from {{ latest.date.strftime('%d %B %Y') }}</div>
+        </div>
+    </div>
+    {% else %}
+    <p class="no-data">No price data available. Use the admin panel to import prices.</p>
+    {% endif %}
+</section>
+
+<section class="chart-section">
+    <h2>Price History</h2>
+    <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+{% endblock %}
